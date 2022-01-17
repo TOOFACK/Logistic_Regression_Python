@@ -75,48 +75,4 @@ class BinaryLogisticLoss(BaseLoss):
         return (1 / X.shape[0] * f_sum + self.l2_coef * 2 * new_w).ravel()
 
 
-class MultinomialLoss(BaseLoss):
-    """
-    Loss function for multinomial regression.
-    It should support l2 regularization.
-    w should be 2d numpy.ndarray.
-    First dimension is class amount.
-    Second dimesion is feature space dimension.
-    """
 
-    def __init__(self, l2_coef):
-        """
-        Parameters
-        ----------
-        l2_coef - l2 regularization coefficient
-        """
-        self.l2_coef = l2_coef
-        self.is_multiclass_task = True
-
-    def func(self, X, y, w):
-        """
-        Get loss function value for data X, target y and coefficient w.
-        Parameters
-        ----------
-        X : scipy.sparse.csr_matrix or numpy.ndarray
-        y : 1d numpy.ndarray
-        w : 2d numpy.ndarray
-        Returns
-        -------
-        : float
-        """
-        pass
-
-    def grad(self, X, y, w):
-        """
-        Get loss function gradient for data X, target y and coefficient w.
-        Parameters
-        ----------
-        X : scipy.sparse.csr_matrix or numpy.ndarray
-        y : 1d numpy.ndarray
-        w : 2d numpy.ndarray
-        Returns
-        -------
-        : 2d numpy.ndarray
-        """
-        pass
